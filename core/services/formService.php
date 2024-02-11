@@ -13,8 +13,18 @@
     if($type === "order"){
         $name = filter_input(INPUT_POST, "name");
         $email = filter_input(INPUT_POST, "email");
-        $categories = filter_input(INPUT_POST, "categories[]");
+        $categories = $_POST["categories"];
         $content = filter_input(INPUT_POST, "content");
         $date = filter_input(INPUT_POST, "date");
     }
+
+    echo $name;
+    echo "<br>";
+    echo $email;
+    echo "<br>";
+    print_r($categories);
+    echo "<br>";
+    echo $content;
+    echo "<br>";
+    echo $date;
 ?>
