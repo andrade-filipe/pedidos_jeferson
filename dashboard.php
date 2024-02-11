@@ -43,10 +43,14 @@
                         <div class="order-info-container">
                             <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
                         </div>
-                        <div class="order-buttons order-info-container">
-                            <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
-                            <button class="btn btn-outline-success order-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                        </div>
+                        <form action="core/services/dashboardService.php" method="POST" class="order-buttons order-info-container">
+                            <button name="cancel" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-danger order-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button name="accept" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-success order-btn">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </form>
                     </div>
                 <?php endforeach; ?>
                 </div>
@@ -67,10 +71,10 @@
                         <div class="order-info-container">
                             <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
                         </div>
-                        <div class="order-buttons order-info-container">
-                            <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
-                            <button class="btn btn-outline-success order-btn"><i class="fa-solid fa-arrow-right"></i></button>
-                        </div>
+                        <form action="core/services/dashboardService.php" method="POST" class="order-buttons order-info-container">
+                            <button name="cancel" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
+                            <button name="post" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-success order-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                        </form>
                     </div>
                 <?php endforeach; ?>
                 </div>
@@ -91,10 +95,10 @@
                         <div class="order-info-container">
                             <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
                         </div>
-                        <div class="order-buttons order-info-container">
-                            <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-trash"></i></button>
-                            <button class="btn btn-outline-warning order-btn"><i class="fa-solid fa-arrow-left"></i></button>
-                        </div>
+                        <form action="core/services/dashboardService.php" method="POST" class="order-buttons order-info-container">
+                            <button name="delete" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-danger order-btn"><i class="fa-solid fa-trash"></i></button>
+                            <button name="back" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-warning order-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                        </form>
                     </div>
                 <?php endforeach; ?>
                 </div>
