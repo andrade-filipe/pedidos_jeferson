@@ -3,6 +3,8 @@
         public function setMessage($msg, $type){
             $_SESSION["msg"] = $msg;
             $_SESSION["type"] = $type;
+
+            header("Location: " . $_SERVER['HTTP_REFERER']);
         }
 
         public function getMessage(){

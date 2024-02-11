@@ -27,6 +27,8 @@
             $order -> setDate($date);
 
             $orderRepository -> createOrder($order);
+
+            $message -> setMessage("Ordem Criada", "success");
         } else {
             $message -> setMessage("Escolha pelomenos uma categoria", "error");
         }
