@@ -4,13 +4,11 @@
 
     class OrderRepository implements OrderDAO {
         private $connection;
-        private $url;
         private $message;
 
-        public function __construct(PDO $connection, $url){
+        public function __construct(PDO $connection){
             $this -> connection = $connection;
-            $this -> url = $url;
-            $this -> message = new Message($url);
+            $this -> message = new Message();
         }
 
         public function createOrder(Order $order){

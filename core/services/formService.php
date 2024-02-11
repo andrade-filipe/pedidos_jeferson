@@ -4,9 +4,9 @@
     include_once("../../infrastructure/Message.php");
     include_once("../repositorys/OrderRepository.php");
 
-    $message = new Message($BASE_URL);
+    $message = new Message();
 
-    $orderRepository = new OrderRepository($db_connection, $BASE_URL);
+    $orderRepository = new OrderRepository($db_connection);
 
     $order = new Order();
 
@@ -28,6 +28,6 @@
 
             $orderRepository -> createOrder($order);
         } else {
-            $message -> setMessage("Escolha pelomenos uma categoria", "error", "back");
+            $message -> setMessage("Escolha pelomenos uma categoria", "error");
         }
     }

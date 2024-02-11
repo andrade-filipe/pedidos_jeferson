@@ -4,13 +4,11 @@
 
     class UserRepository implements UserDAO {
         private $connection;
-        private $url;
         private $message;
 
-        public function __construct(PDO $connection, $url){
+        public function __construct(PDO $connection){
             $this -> connection = $connection;
-            $this -> url = $url;
-            $this -> message = new Message($url);
+            $this -> message = new Message();
         }
 
         public function createUser(User $user){}

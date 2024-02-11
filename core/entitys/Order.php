@@ -8,7 +8,7 @@
         private $content;
 
         public function verifyCategory($category){
-            if($category){
+            if($category != ""){
                 return true;
             }
             return false;

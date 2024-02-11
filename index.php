@@ -1,10 +1,14 @@
 <?php
     include_once("application/templates/header.php");
+
+    // echo "<pre>";
+    // var_dump($_SERVER);
+    // echo "</pre>";
 ?>
 <div class="container ">
     <div class="row">
         <div class="col-12 text-center form-container">
-            <form action="<?= $BASE_URL ?>core/services/formService.php" method="POST">
+            <form action="core/services/formService.php" method="POST">
                 <input type="hidden" value="order" name="type">
                 <div class="form-group">
                     <input placeholder="Nome" type="text" class="form-control" id="name" name="name" required>

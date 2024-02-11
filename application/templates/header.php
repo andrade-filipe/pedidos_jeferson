@@ -3,7 +3,7 @@
     include_once("infrastructure/database.php");
     include_once("infrastructure/Message.php");
 
-    $message = new Message($BASE_URL);
+    $message = new Message();
 
     $showMessage = $message -> getMessage();
 
@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeferson</title>
     <!-- Icone da aba -->
-    <link rel="short icon" href="<?= $BASE_URL ?>img/icon.ico">
+    <link rel="short icon" href="img/icon.ico">
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- FONT AWESOME -->
@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="<?= $BASE_URL ?>/styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <?php if(!empty($showMessage["msg"])): ?>
