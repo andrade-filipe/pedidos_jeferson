@@ -113,6 +113,11 @@ body{
     padding: 1rem;
 }
 
+.order-info-container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+}
+
 .order-card {
     background-color: #fff; /* Cor de fundo do cartão */
     border:  1px solid #ddd; /* Borda do cartão */
@@ -120,6 +125,12 @@ body{
     padding:  1rem; /* Padding interno do cartão */
     width: 100%;
 }
+
+.order-item{
+    flex:  1; /* Each item takes equal width */
+}
+
+.order-item 
 
 .order-card--new {
     box-shadow:  0  2px  4px rgba(13, 110, 253,  0.5); /* Sombra para dar profundidade */

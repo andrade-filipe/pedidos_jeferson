@@ -41,13 +41,18 @@
                 <div class="order-card-grid">
                 <?php foreach($newOrders as $order): ?>
                     <div class="order-card order-card--new">
-                        <p class="order-item"><?= $order -> getName() ?></p>
-                        <p class="order-item"><?= $order -> getEmail() ?></p>
-                        <p class="order-item"><?= $order -> getDate() ?></p>
-                        <p class="order-item"><?= $order -> getCategory() ?></p>
-                        <p class="order-item"><?= $order -> getContent() ?></p>
-                        <p class="order-item"><?= $order -> getStatus() ?></p>
-                        <div class="order-buttons">
+                    <div class="order-info-container">
+                            <p class="order-item">Nome: <?= $order -> getName() ?></p>
+                            <p class="order-item">Email: <?= $order -> getEmail() ?></p>
+                        </div>
+                        <div class="order-info-container">
+                            <p class="order-item">Data: <?= $order -> getDate() ?></p>
+                            <p class="order-item">Categoria: <?= $order -> getCategory() ?></p>
+                        </div>
+                        <div class="order-info-container">
+                            <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
+                        </div>
+                        <div class="order-buttons order-info-container">
                             <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
                             <button class="btn btn-outline-success order-btn"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
@@ -60,13 +65,18 @@
                 <div class="order-card-grid">
                 <?php foreach($processingOrders as $order): ?>
                     <div class="order-card order-card--process">
-                        <p class="order-item"><?= $order -> getName() ?></p>
-                        <p class="order-item"><?= $order -> getEmail() ?></p>
-                        <p class="order-item"><?= $order -> getDate() ?></p>
-                        <p class="order-item"><?= $order -> getCategory() ?></p>
-                        <p class="order-item"><?= $order -> getContent() ?></p>
-                        <p class="order-item"><?= $order -> getStatus() ?></p>
-                        <div class="order-buttons">
+                        <div class="order-info-container">
+                        <p class="order-item">Nome: <?= $order -> getName() ?></p>
+                            <p class="order-item">Email: <?= $order -> getEmail() ?></p>
+                        </div>
+                        <div class="order-info-container">
+                            <p class="order-item">Data: <?= $order -> getDate() ?></p>
+                            <p class="order-item">Categoria: <?= $order -> getCategory() ?></p>
+                        </div>
+                        <div class="order-info-container">
+                            <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
+                        </div>
+                        <div class="order-buttons order-info-container">
                             <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
                             <button class="btn btn-outline-success order-btn"><i class="fa-solid fa-arrow-right"></i></button>
                         </div>
@@ -79,13 +89,18 @@
                 <div class="order-card-grid">
                 <?php foreach($postedOrders as $order): ?>
                     <div class="order-card order-card--posted">
-                        <p class="order-item"><?= $order -> getName() ?></p>
-                        <p class="order-item"><?= $order -> getEmail() ?></p>
-                        <p class="order-item"><?= $order -> getDate() ?></p>
-                        <p class="order-item"><?= $order -> getCategory() ?></p>
-                        <p class="order-item"><?= $order -> getContent() ?></p>
-                        <p class="order-item"><?= $order -> getStatus() ?></p>
-                        <div class="order-buttons">
+                    <div class="order-info-container">
+                            <p class="order-item">Nome: <?= $order -> getName() ?></p>
+                            <p class="order-item">Email: <?= $order -> getEmail() ?></p>
+                        </div>
+                        <div class="order-info-container">
+                            <p class="order-item">Data: <?= $order -> getDate() ?></p>
+                            <p class="order-item">Categoria: <?= $order -> getCategory() ?></p>
+                        </div>
+                        <div class="order-info-container">
+                            <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
+                        </div>
+                        <div class="order-buttons order-info-container">
                             <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-trash"></i></button>
                             <button class="btn btn-outline-warning order-btn"><i class="fa-solid fa-arrow-left"></i></button>
                         </div>
