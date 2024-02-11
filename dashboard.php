@@ -16,6 +16,7 @@
     $postedOrders = [];
 
     foreach($orders as $order){
+        //TODO: Array não disponibiliza as informações da forma devida, algo está errado
         $status = $statusRepository -> findByOrderId($order["id"]);
         $strStatus = $status["status"];
 
