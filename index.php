@@ -32,8 +32,8 @@
                 <div class="form-group">
                     <textarea class="form-control" name="content" id="content" rows="6" placeholder="Conteúdo Desejado" required></textarea>
                 </div>
-                <div class="form-group date-div">
-                    <input type="date" id="date" name="date" required>
+                <div class="form-group date-div d-flex justify-content-center">
+                    <input type="date" id="date" name="date" class="form-control date-control" required>
                 </div>
                 <input type="submit" class="btn btn-outline-success" value="Enviar">
             </form>
@@ -42,4 +42,5 @@
 </div>
 <?php
     include_once("application/templates/footer.php");
+    include_once("application/templates/close.php");
 ?>
