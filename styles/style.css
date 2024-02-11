@@ -1,5 +1,9 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
 .form-container{
-    height: 90vh;
+    height: 80vh;
     margin-top: 2rem;
     padding: 3rem;
 }
