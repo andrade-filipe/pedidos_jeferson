@@ -1,38 +1,33 @@
 <?php
-    class Order {
+    class OrderModel {
         private $id;
         private $name;
         private $email;
         private $date;
         private $category;
         private $content;
+        private $status;
 
-        public function verifyCategory($category){
-            if($category != ""){
-                return true;
-            }
-            return false;
-        }
+        public function buildOrderModel(Order $order, $status){
+            $model = new OrderModel();
 
-        public function buildOrder($name, $email, $category, $content, $date){
-            $this -> setName($name);
-            $this -> setEmail($email);
-            $this -> setCategory($category);
-            $this -> setContent($content);
-            $this -> setDate($date);
+            $model -> setId($order -> getId());
+            $model -> setName($order -> getName());
+            $model -> setEmail($order -> getEmail());
+            $model -> setDate($order -> getDate());
+            $model -> setCategory($order -> getCategory());
+            $model -> setContent($order -> getContent());
+            $model -> setStatus($status);
 
-            return $this;
-        }
-
-        public function arrayToObject($orderArr){
-            $this -> setId($orderArr["id"]);
-            $this -> setName($orderArr["name"]);
-            $this -> setEmail($orderArr["email"]);
-            $this -> setDate($orderArr["order_date"]);
-            $this -> setCategory($orderArr["category"]);
-            $this -> setContent($orderArr["content"]);
-
-            return $this;
+            return $model = [
+                "id" => $model -> getId(),
+                "name" => $model -> getName(),
+                "email" => $model -> getEmail(),
+                "date" => $model -> getDate(),
+                "category" => $model -> getCategory(),
+                "content" => $model -> getContent(),
+                "status" => $model -> getStatus(),
+            ];
         }
 
         public function getId(){
@@ -82,14 +77,12 @@
         public function setContent($content){
             $this -> content = $content;
         }
-    }
 
-    interface OrderDAO {
-        public function createOrder(Order $order);
-        public function updateOrder(Order $order);
+        public function getStatus(){
+            return $this -> status;
+        }
 
-        public function findById($id);
-        public function findByEmail($email);
-
-        public function fetchOrders();
+        public function setStatus($status){
+            $this -> status = $status;
+        }
     }

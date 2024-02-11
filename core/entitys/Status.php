@@ -29,12 +29,13 @@
         }
     }
 
-    enum Status {
-        case Novo;
-        case Processamento;
-        case Postado;
+    enum StatusEnum {
+        case novo;
+        case processamento;
+        case postado;
     }
 
     interface StatusDAO {
         public function findByOrderId($orderId);
+        public function fetchStatus();
     }

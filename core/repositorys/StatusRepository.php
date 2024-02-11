@@ -11,5 +11,25 @@
             $this -> message = new Message();
         }
 
-        public function findByOrderId($orderId){}
+        public function findByOrderId($orderId){
+            $stmt = $this -> connection -> prepare("SELECT status FROM status WHERE orders_id = :orders_id");
+
+            $stmt -> bindParam(":orders_id", $orderId);
+
+            $stmt -> execute();
+
+            $status = $stmt -> fetch();
+
+            return $status;
+        }
+
+        public function fetchStatus(){
+            $stmt = $this -> connection -> prepare("SELECT * FROM status");
+
+            $stmt -> execute();
+
+            $status = $stmt -> fetchAll();
+
+            return $status;
+        }
     }
