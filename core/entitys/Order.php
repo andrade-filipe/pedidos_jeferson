@@ -6,6 +6,7 @@
         private $date;
         private $category;
         private $content;
+        private $status;
 
         public function verifyCategory($category){
             if($category != ""){
@@ -20,6 +21,7 @@
             $this -> setCategory($category);
             $this -> setContent($content);
             $this -> setDate($date);
+            $this -> setStatus("novo");
 
             return $this;
         }
@@ -31,6 +33,7 @@
             $this -> setDate($orderArr["order_date"]);
             $this -> setCategory($orderArr["category"]);
             $this -> setContent($orderArr["content"]);
+            $this -> setStatus($orderArr["status"]);
 
             return $this;
         }
@@ -81,6 +84,15 @@
 
         public function setContent($content){
             $this -> content = $content;
+        }
+
+
+        public function getStatus(){
+            return $this -> status;
+        }
+
+        public function setStatus($status){
+            $this -> status = $status;
         }
     }
 

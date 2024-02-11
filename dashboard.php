@@ -7,7 +7,6 @@
     include_once("core/repositorys/StatusRepository.php");
 
     $orderRepository = new OrderRepository($connection);
-    $statusRepository = new StatusRepository($connection);
 
     $orders = $orderRepository->fetchOrders();
 
@@ -19,18 +18,12 @@
         $orderObj = new Order();
         $orderObj -> arrayToObject($order);
 
-        $status = $statusRepository -> findByOrderId($orderObj -> getId());
-        $strStatus = $status["status"];
-
-        $model = new OrderModel();
-        $model -> buildOrderModel($orderObj,$strStatus);
-
-        if($strStatus == "novo"){
-            $newOrders[] = $model;
-        } else if ($strStatus  == "processamento"){
-            $processingOrders[] = $model;
-        } else if ($strStatus  == "postado"){
-            $postedOrders[] = $model;
+        if($orderObj -> getStatus() == "novo"){
+            $newOrders[] = $orderObj;
+        } else if ($orderObj -> getStatus()  == "processamento"){
+            $processingOrders[] = $orderObj;
+        } else if ($orderObj -> getStatus()  == "postado"){
+            $postedOrders[] = $orderObj;
         }
     }
 ?>

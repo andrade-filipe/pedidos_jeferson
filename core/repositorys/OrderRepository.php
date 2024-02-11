@@ -1,6 +1,7 @@
 <?php
     include_once("../entitys/Order.php");
     include_once("../../infrastructure/Message.php");
+    include_once("StatusRepository.php");
 
     class OrderRepository implements OrderDAO {
         private $connection;
@@ -12,17 +13,23 @@
         }
 
         public function createOrder(Order $order){
-            $stmt = $this -> connection -> prepare("INSERT INTO orders " .
-            "(name,email,order_date,category,content) " .
-            "VALUES (:name, :email, :order_date, :category, :content)");
 
-            $stmt -> bindParam(":name", $order -> getName());
-            $stmt -> bindParam(":email", $order -> getEmail());
-            $stmt -> bindParam(":order_date", $order -> getDate());
-            $stmt -> bindParam(":category", $order -> getCategory());
-            $stmt -> bindParam(":content", $order -> getContent());
+            try{
+                $stmt = $this -> connection -> prepare("INSERT INTO orders " .
+                "(name,email,order_date,category,content,status) " .
+                "VALUES (:name, :email, :order_date, :category, :content, :status)");
 
-            $stmt -> execute();
+                $stmt -> bindParam(":name", $order -> getName());
+                $stmt -> bindParam(":email", $order -> getEmail());
+                $stmt -> bindParam(":order_date", $order -> getDate());
+                $stmt -> bindParam(":category", $order -> getCategory());
+                $stmt -> bindParam(":content", $order -> getContent());
+                $stmt -> bindParam(":status", $order -> getStatus());
+
+                $stmt -> execute();
+            }catch (PDOException $e) {
+                throw $e;
+            }
         }
 
         public function updateOrder(Order $order){}
