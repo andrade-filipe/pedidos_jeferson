@@ -25,7 +25,7 @@
                     <label for="checkbox-novela" class="btn btn-outline-danger">novela</label>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="content" id="content" rows="3" placeholder="Conteúdo Desejado"></textarea>
+                    <textarea class="form-control" name="content" id="content" rows="6" placeholder="Conteúdo Desejado"></textarea>
                 </div>
                 <div class="form-group date-div">
                     <input type="date" id="date" name="date">
