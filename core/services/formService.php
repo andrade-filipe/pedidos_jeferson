@@ -15,14 +15,14 @@
     if($type === "order"){
         $name = filter_input(INPUT_POST, "name");
         $email = filter_input(INPUT_POST, "email");
-        $categories = $_POST["categories"];
+        $category = filter_input(INPUT_POST, "category");
         $content = filter_input(INPUT_POST, "content");
         $date = filter_input(INPUT_POST, "date");
 
-        if($order -> verifyCategories($categories)){
+        if($order -> verifyCategory($category)){
             $order -> setName($name);
             $order -> setEmail($email);
-            $order -> setCategories($categories);
+            $order -> setCategory($category);
             $order -> setContent($content);
             $order -> setDate($date);
 
