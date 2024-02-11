@@ -14,9 +14,19 @@
         }
 
         public function createOrder(Order $order){
+            $stmt = $this -> connection -> prepare("INSERT INTO orders " .
+            "(name,email,order_date,category,content) " .
+            "VALUES (:name, :email, :order_date, :category, :content)");
 
+            $stmt -> bindParam(":name", $order -> getName());
+            $stmt -> bindParam(":email", $order -> getEmail());
+            $stmt -> bindParam(":order_date", $order -> getDate());
+            $stmt -> bindParam(":category", $order -> getCategory());
+            $stmt -> bindParam(":content", $order -> getContent());
+
+            $stmt -> execute();
         }
-        
+
         public function updateOrder(Order $order){}
 
         public function findById($id){}

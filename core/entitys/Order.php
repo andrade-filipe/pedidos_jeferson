@@ -4,11 +4,11 @@
         private $name;
         private $email;
         private $date;
-        private $categories;
+        private $category;
         private $content;
 
-        public function verifyCategories($categories){
-            if($categories){
+        public function verifyCategory($category){
+            if($category){
                 return true;
             }
             return false;
@@ -46,12 +46,12 @@
             $this -> date = $date;
         }
 
-        public function getCategories(){
-            return $this -> categories;
+        public function getCategory(){
+            return $this -> category;
         }
 
-        public function setCategories($categories){
-            $this -> categories = $categories;
+        public function setCategory($category){
+            $this -> category = $category;
         }
 
         public function getContent(){
