@@ -37,7 +37,7 @@
         public function findByEmail($email){}
 
         public function fetchOrders(){
-            $stmt = $this -> connection -> prepare("SELECT * FROM orders");
+            $stmt = $this -> connection -> prepare("SELECT * FROM orders ORDER BY id DESC");
 
             $stmt -> execute();
 
