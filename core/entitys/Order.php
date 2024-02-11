@@ -3,9 +3,16 @@
         private $id;
         private $name;
         private $email;
-        private $orderDate;
-        private $category;
+        private $date;
+        private $categories;
         private $content;
+
+        public function verifyCategories($categories){
+            if($categories){
+                return true;
+            }
+            return false;
+        }
 
         public function getId(){
             return $this -> id;
@@ -31,20 +38,20 @@
             $this -> email = $email;
         }
 
-        public function getOrderDate(){
-            return $this -> orderDate;
+        public function getDate(){
+            return $this -> date;
         }
 
-        public function setOrderDate($orderDate){
-            $this -> orderDate = $orderDate;
+        public function setDate($date){
+            $this -> date = $date;
         }
 
-        public function getCategory(){
-            return $this -> category;
+        public function getCategories(){
+            return $this -> categories;
         }
 
-        public function setCategory($category){
-            $this -> category = $category;
+        public function setCategories($categories){
+            $this -> categories = $categories;
         }
 
         public function getContent(){
