@@ -10,4 +10,15 @@
 
     $type = filter_input(INPUT_POST, "type");
 
-    if($type === "login"){}
+    if($type === "login"){
+        $email = filter_input(INPUT_POST, "email");
+        $password = filter_input(INPUT_POST, "password");
+
+        if($userRepository -> authenticateUser($email, $password)){
+            header("Location: " . "../../dashboard.php");
+        } else {
+            $message -> setMessage("Email ou Senha Incorretos", "error");
+        }
+    }else {
+        $message -> setMessage("Informações Inválidas", "error");
+    }

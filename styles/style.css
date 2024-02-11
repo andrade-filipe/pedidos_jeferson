@@ -72,3 +72,31 @@ body{
 .login-control{
     max-width: fit-content;
 }
+
+/* DASHBOARD */
+
+.dashboard-section{
+    margin: 2rem 0.25rem;
+    padding: 2rem 0;
+}
+
+.new-section {
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 1.6rem;
+    border-color: #0d6efd;
+}
+
+.processing-section {
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 1.6rem;
+    border-color: #ffc107;
+}
+
+.posted-section {
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 1.6rem;
+    border-color: #198754;
+}

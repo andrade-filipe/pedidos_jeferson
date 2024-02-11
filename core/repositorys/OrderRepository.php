@@ -29,4 +29,14 @@
 
         public function findById($id){}
         public function findByEmail($email){}
+
+        public function fetchOrders(){
+            $stmt = $this -> connection -> prepare("SELECT * FROM orders");
+
+            $stmt -> execute();
+
+            $orders = $stmt -> fetchAll();
+
+            return $orders;
+        }
     }

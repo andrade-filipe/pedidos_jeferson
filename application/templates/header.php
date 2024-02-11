@@ -3,6 +3,8 @@
     include_once("infrastructure/database.php");
     include_once("infrastructure/Message.php");
 
+    $connection = $db_connection;
+
     $message = new Message();
 
     $showMessage = $message -> getMessage();

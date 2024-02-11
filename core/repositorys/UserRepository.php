@@ -16,4 +16,14 @@
 
         public function findById($id){}
         public function findByEmail($email){}
+        public function findByToken($token){}
+
+        public function authenticateUser($email, $password){
+            return true;
+        }
+
+        public function verifyToken($protected = false){}
+        public function setTokenToSession($token, $redirect = true){}
+        public function destroyToken(){}
+        public function changePassword(User $user){}
     }
