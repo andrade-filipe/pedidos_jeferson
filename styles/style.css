@@ -92,6 +92,7 @@ body{
     border-style: solid;
     border-radius: 1.6rem;
     border-color: #ffc107;
+    display: block;
 }
 
 .posted-section {
@@ -99,4 +100,46 @@ body{
     border-style: solid;
     border-radius: 1.6rem;
     border-color: #198754;
+}
+
+
+
+.order-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit); /* Ajuste o valor mínimo conforme necessário */
+    gap:  1rem; /* Espaçamento entre os cartões */
+    justify-items: start; /* Alinhamento horizontal dos cartões */
+    align-items: start; /* Alinhamento vertical dos cartões */
+    padding: 1rem;
+}
+
+.order-card {
+    background-color: #fff; /* Cor de fundo do cartão */
+    border:  1px solid #ddd; /* Borda do cartão */
+    border-radius:  1rem; /* Bordas arredondadas */
+    padding:  1rem; /* Padding interno do cartão */
+    width: 100%;
+}
+
+.order-card--new {
+    box-shadow:  0  2px  4px rgba(13, 110, 253,  0.5); /* Sombra para dar profundidade */
+}
+.order-card--process {
+    box-shadow:  0  2px  4px rgba(255, 193, 7,  0.5); /* Sombra para dar profundidade */
+}
+.order-card--posted{
+    box-shadow:  0  2px  4px rgba(25, 135, 84,  0.5); /* Sombra para dar profundidade */
+}
+
+
+/* Estilização dos botões dentro do cartão */
+.order-buttons {
+    display: flex;
+    justify-content: space-between; /* Espaçamento igual entre os botões */
+    margin-top:  1rem; /* Espaçamento acima dos botões */
+    gap: 1rem;
+}
+
+.order-btn{
+    width: 100%;
 }

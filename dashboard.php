@@ -36,20 +36,62 @@
 ?>
     <div class="container">
         <div class="row text-center">
-            <div class="dashboard-section new-section col d-flex justify-content-center align-items-center">
-                <h2>Novos</h2>
+            <div class="dashboard-section new-section col">
+                <h2 class="dashboard-title">Novos</h2>
+                <div class="order-card-grid">
                 <?php foreach($newOrders as $order): ?>
+                    <div class="order-card order-card--new">
+                        <p class="order-item"><?= $order -> getName() ?></p>
+                        <p class="order-item"><?= $order -> getEmail() ?></p>
+                        <p class="order-item"><?= $order -> getDate() ?></p>
+                        <p class="order-item"><?= $order -> getCategory() ?></p>
+                        <p class="order-item"><?= $order -> getContent() ?></p>
+                        <p class="order-item"><?= $order -> getStatus() ?></p>
+                        <div class="order-buttons">
+                            <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
+                            <button class="btn btn-outline-success order-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
+                </div>
             </div>
-            <div class="dashboard-section processing-section col d-flex justify-content-center align-items-center">
-                <h2>Processamento</h2>
+            <div class="dashboard-section processing-section col">
+                <h2 class="dashboard-title">Processamento</h2>
+                <div class="order-card-grid">
                 <?php foreach($processingOrders as $order): ?>
+                    <div class="order-card order-card--process">
+                        <p class="order-item"><?= $order -> getName() ?></p>
+                        <p class="order-item"><?= $order -> getEmail() ?></p>
+                        <p class="order-item"><?= $order -> getDate() ?></p>
+                        <p class="order-item"><?= $order -> getCategory() ?></p>
+                        <p class="order-item"><?= $order -> getContent() ?></p>
+                        <p class="order-item"><?= $order -> getStatus() ?></p>
+                        <div class="order-buttons">
+                            <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
+                            <button class="btn btn-outline-success order-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
+                </div>
             </div>
-            <div class="dashboard-section posted-section col d-flex justify-content-center align-items-center">
-                <h2>Postados</h2>
+            <div class="dashboard-section posted-section col">
+                <h2 class="dashboard-title">Postados</h2>
+                <div class="order-card-grid">
                 <?php foreach($postedOrders as $order): ?>
+                    <div class="order-card order-card--posted">
+                        <p class="order-item"><?= $order -> getName() ?></p>
+                        <p class="order-item"><?= $order -> getEmail() ?></p>
+                        <p class="order-item"><?= $order -> getDate() ?></p>
+                        <p class="order-item"><?= $order -> getCategory() ?></p>
+                        <p class="order-item"><?= $order -> getContent() ?></p>
+                        <p class="order-item"><?= $order -> getStatus() ?></p>
+                        <div class="order-buttons">
+                            <button class="btn btn-outline-danger order-btn"><i class="fa-solid fa-trash"></i></button>
+                            <button class="btn btn-outline-warning order-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </div>
