@@ -1,12 +1,12 @@
 <?php
     class OrderModel {
-        private $id;
-        private $name;
-        private $email;
-        private $date;
-        private $category;
-        private $content;
-        private $status;
+        public $id;
+        public $name;
+        public $email;
+        public $date;
+        public $category;
+        public $content;
+        public $status;
 
         public function buildOrderModel(Order $order, $status){
             $model = new OrderModel();
@@ -19,15 +19,7 @@
             $model -> setContent($order -> getContent());
             $model -> setStatus($status);
 
-            return $model = [
-                "id" => $model -> getId(),
-                "name" => $model -> getName(),
-                "email" => $model -> getEmail(),
-                "date" => $model -> getDate(),
-                "category" => $model -> getCategory(),
-                "content" => $model -> getContent(),
-                "status" => $model -> getStatus(),
-            ];
+            return $model;
         }
 
         public function getId(){
