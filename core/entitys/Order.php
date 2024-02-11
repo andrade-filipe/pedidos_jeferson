@@ -14,7 +14,7 @@
             return false;
         }
 
-        public function setOrderVariables($name, $email, $category, $content, $date){
+        public function buildOrder($name, $email, $category, $content, $date){
             $this -> setName($name);
             $this -> setEmail($email);
             $this -> setCategory($category);

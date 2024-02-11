@@ -20,7 +20,7 @@
         $date = filter_input(INPUT_POST, "date");
 
         if($order -> verifyCategory($category)){
-            $order -> setOrderVariables($name, $email, $category, $content, $date);
+            $order -> buildOrder($name, $email, $category, $content, $date);
 
             $orderRepository -> createOrder($order);
 

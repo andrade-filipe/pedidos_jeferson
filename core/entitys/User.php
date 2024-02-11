@@ -5,7 +5,7 @@
         private $password;
         private $token;
 
-        public function setUserVariables($email, $password, $token){
+        public function buildUser($email, $password, $token){
             $this -> setEmail($email);
             $this -> setPassword($password);
             $this -> setToken($token);
@@ -50,4 +50,12 @@
 
         public function findById($id);
         public function findByEmail($email);
+        public function findByToken($token);
+
+        public function authenticateUser($email, $password);
+
+        public function verifyToken($protected = false);
+        public function setTokenToSession($token, $redirect = true);
+        public function destroyToken();
+        public function changePassword(User $user);
     }
