@@ -19,5 +19,3 @@
         public function findById($id){}
         public function findByEmail($email){}
     }
-
-?>

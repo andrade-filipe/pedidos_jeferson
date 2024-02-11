@@ -17,14 +17,3 @@
         $content = filter_input(INPUT_POST, "content");
         $date = filter_input(INPUT_POST, "date");
     }
-
-    echo $name;
-    echo "<br>";
-    echo $email;
-    echo "<br>";
-    print_r($categories);
-    echo "<br>";
-    echo $content;
-    echo "<br>";
-    echo $date;
-?>
