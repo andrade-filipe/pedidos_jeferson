@@ -5,30 +5,31 @@
     <div class="row">
         <div class="col-12 text-center form-container">
             <form action="<?= $BASE_URL ?>core/services/formService.php" method="POST">
+                <input type="hidden" value="order" name="type">
                 <div class="form-group">
-                    <input placeholder="Nome" type="text" class="form-control" id="name" name="name">
+                    <input placeholder="Nome" type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <input placeholder="Email" type="email" class="form-control" id="email" name="email">
+                    <input placeholder="Email" type="email" class="form-control" id="email" name="email" required>
                 </div>
-                <div class="form-group checkbox-div">
+                <div id="checkbox-div" class="form-group checkbox-div d-flex justify-content-center">
                     <input type="checkbox" class="btn-check" value="canal" id="checkbox-canal" name="categories[]" autocomplete="off">
-                    <label for="checkbox-canal" class="btn btn-outline-danger">canal</label>
+                    <label for="checkbox-canal" class="btn btn-outline-danger checkbox-label">Canal</label>
 
                     <input type="checkbox" class="btn-check" value="serie" id="checkbox-serie" name="categories[]" autocomplete="off">
-                    <label for="checkbox-serie" class="btn btn-outline-danger">série</label>
+                    <label for="checkbox-serie" class="btn btn-outline-danger checkbox-label">Série</label>
 
                     <input type="checkbox" class="btn-check" value="filme" id="checkbox-filme" name="categories[]" autocomplete="off">
-                    <label for="checkbox-filme" class="btn btn-outline-danger">filme</label>
+                    <label for="checkbox-filme" class="btn btn-outline-danger checkbox-label">Filme</label>
 
                     <input type="checkbox" class="btn-check" value="novela" id="checkbox-novela" name="categories[]" autocomplete="off">
-                    <label for="checkbox-novela" class="btn btn-outline-danger">novela</label>
+                    <label for="checkbox-novela" class="btn btn-outline-danger checkbox-label">Novela</label>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="content" id="content" rows="6" placeholder="Conteúdo Desejado"></textarea>
+                    <textarea class="form-control" name="content" id="content" rows="6" placeholder="Conteúdo Desejado" required></textarea>
                 </div>
                 <div class="form-group date-div">
-                    <input type="date" id="date" name="date">
+                    <input type="date" id="date" name="date" required>
                 </div>
                 <input type="submit" class="btn btn-outline-success" value="Enviar">
             </form>
