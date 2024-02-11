@@ -2,9 +2,7 @@
     include_once("application/templates/header.php");
     include_once("application/models/OrderModel.php");
     include_once("core/entitys/Order.php");
-    include_once("core/entitys/Status.php");
     include_once("core/repositorys/OrderRepository.php");
-    include_once("core/repositorys/StatusRepository.php");
 
     $orderRepository = new OrderRepository($connection);
 

@@ -1,7 +1,6 @@
 <?php
     include_once("../entitys/Order.php");
     include_once("../../infrastructure/Message.php");
-    include_once("StatusRepository.php");
 
     class OrderRepository implements OrderDAO {
         private $connection;
