@@ -25,5 +25,9 @@
             $order -> setCategories($categories);
             $order -> setContent($content);
             $order -> setDate($date);
+
+            $orderRepository -> createOrder($order);
+        } else {
+            $message -> setMessage("Escolha pelomenos uma categoria", "error", "back");
         }
     }

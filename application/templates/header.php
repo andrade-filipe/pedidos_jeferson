@@ -32,8 +32,8 @@
     <link rel="stylesheet" href="<?= $BASE_URL ?>/styles/style.css">
 </head>
 <body>
-    <?php if(!empty($flassMessage["msg"])): ?>
-        <div class="msg-container">
+    <?php if(!empty($showMessage["msg"])): ?>
+        <div class="msg-container text-center container">
             <p class="msg <?= $showMessage["type"] ?>"><?= $showMessage["msg"] ?></p>
         </div>
     <?php endif; ?>
