@@ -9,17 +9,15 @@
         public $status;
 
         public function buildOrderModel(Order $order, $status){
-            $model = new OrderModel();
+            $this -> setId($order -> getId());
+            $this -> setName($order -> getName());
+            $this -> setEmail($order -> getEmail());
+            $this -> setDate($order -> getDate());
+            $this -> setCategory($order -> getCategory());
+            $this -> setContent($order -> getContent());
+            $this -> setStatus($status);
 
-            $model -> setId($order -> getId());
-            $model -> setName($order -> getName());
-            $model -> setEmail($order -> getEmail());
-            $model -> setDate($order -> getDate());
-            $model -> setCategory($order -> getCategory());
-            $model -> setContent($order -> getContent());
-            $model -> setStatus($status);
-
-            return $model;
+            return $this;
         }
 
         public function getId(){

@@ -35,7 +35,7 @@
 
             $stmt -> execute();
 
-            $orders = $stmt -> fetchAll();
+            $orders = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
             return $orders;
         }

@@ -18,7 +18,7 @@
 
             $stmt -> execute();
 
-            $status = $stmt -> fetch();
+            $status = $stmt -> fetch(PDO::FETCH_ASSOC);
 
             return $status;
         }
@@ -28,7 +28,7 @@
 
             $stmt -> execute();
 
-            $status = $stmt -> fetchAll();
+            $status = $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
             return $status;
         }

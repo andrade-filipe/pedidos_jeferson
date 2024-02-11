@@ -16,24 +16,20 @@
     $postedOrders = [];
 
     foreach($orders as $order){
-        //TODO: Array não disponibiliza as informações da forma devida, algo está errado
-        $status = $statusRepository -> findByOrderId($order["id"]);
-        $strStatus = $status["status"];
-
         $orderObj = new Order();
         $orderObj -> arrayToObject($order);
 
+        $status = $statusRepository -> findByOrderId($orderObj -> getId());
+        $strStatus = $status["status"];
+
+        $model = new OrderModel();
+        $model -> buildOrderModel($orderObj,$strStatus);
+
         if($strStatus == "novo"){
-            $model = new OrderModel();
-            $model -> buildOrderModel($orderObj,$strStatus);
             $newOrders[] = $model;
         } else if ($strStatus  == "processamento"){
-            $model = new OrderModel();
-            $model -> buildOrderModel($orderObj, $strStatus);
             $processingOrders[] = $model;
         } else if ($strStatus  == "postado"){
-            $model = new OrderModel();
-            $model -> buildOrderModel($orderObj, $strStatus);
             $postedOrders[] = $model;
         }
     }
@@ -43,19 +39,16 @@
             <div class="dashboard-section new-section col d-flex justify-content-center align-items-center">
                 <h2>Novos</h2>
                 <?php foreach($newOrders as $order): ?>
-                    <p><?= $order -> getName() ?></p>
                 <?php endforeach; ?>
             </div>
             <div class="dashboard-section processing-section col d-flex justify-content-center align-items-center">
                 <h2>Processamento</h2>
                 <?php foreach($processingOrders as $order): ?>
-                    <h1><?= $order -> getName() ?></h1>
                 <?php endforeach; ?>
             </div>
             <div class="dashboard-section posted-section col d-flex justify-content-center align-items-center">
                 <h2>Postados</h2>
                 <?php foreach($postedOrders as $order): ?>
-                    <h1><?= $order -> getName() ?></h1>
                 <?php endforeach; ?>
             </div>
         </div>
