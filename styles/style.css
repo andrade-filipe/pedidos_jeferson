@@ -11,10 +11,9 @@ body{
 }
 
 /* FORMULARIO INDEX.PHP */
+
 .form-container{
-    height: 80vh;
-    margin-top: 2rem;
-    padding: 3rem;
+    height: 90vh;
 }
 
 .form-group{
@@ -63,4 +62,13 @@ body{
     color: black;
     font-weight: 700;
     background-color: #ffc107;
+}
+
+/*LOGIN*/
+.login-container{
+    height: 100vh;
+}
+
+.login-control{
+    max-width: fit-content;
 }

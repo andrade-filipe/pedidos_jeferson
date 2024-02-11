@@ -5,9 +5,9 @@
     // var_dump($_SERVER);
     // echo "</pre>";
 ?>
-<div class="container ">
+<div class="container form-container d-flex justify-content-center align-items-center text-center">
     <div class="row">
-        <div class="col-12 text-center form-container">
+        <div class="col-12">
             <form action="core/services/formService.php" method="POST">
                 <input type="hidden" value="order" name="type">
                 <div class="form-group">
