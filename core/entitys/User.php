@@ -5,8 +5,18 @@
         private $password;
         private $token;
 
+        public function setUserVariables($email, $password, $token){
+            $this -> setEmail($email);
+            $this -> setPassword($password);
+            $this -> setToken($token);
+        }
+
         public function getId(){
             return $this -> id;
+        }
+
+        public function setId($id){
+            $this -> id = $id;
         }
 
         public function getEmail(){

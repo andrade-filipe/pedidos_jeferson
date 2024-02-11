@@ -14,6 +14,16 @@
             return false;
         }
 
+        public function setOrderVariables($name, $email, $category, $content, $date){
+            $this -> setName($name);
+            $this -> setEmail($email);
+            $this -> setCategory($category);
+            $this -> setContent($content);
+            $this -> setDate($date);
+
+            return $this;
+        }
+
         public function getId(){
             return $this -> id;
         }

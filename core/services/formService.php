@@ -8,11 +8,11 @@
 
     $orderRepository = new OrderRepository($db_connection);
 
-    $order = new Order();
-
     $type = filter_input(INPUT_POST, "type");
 
     if($type === "order"){
+        $order = new Order();
+
         $name = filter_input(INPUT_POST, "name");
         $email = filter_input(INPUT_POST, "email");
         $category = filter_input(INPUT_POST, "category");
@@ -20,11 +20,7 @@
         $date = filter_input(INPUT_POST, "date");
 
         if($order -> verifyCategory($category)){
-            $order -> setName($name);
-            $order -> setEmail($email);
-            $order -> setCategory($category);
-            $order -> setContent($content);
-            $order -> setDate($date);
+            $order -> setOrderVariables($name, $email, $category, $content, $date);
 
             $orderRepository -> createOrder($order);
 
