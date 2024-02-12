@@ -81,11 +81,7 @@ class User
 }
 
 interface UserDAO
-{
-    public function createUser(User $user);
-    public function updateUser(User $user);
-
-    public function findById($id);
+{   public function updateUserToken($userId, $token);
     public function findByEmail($email);
     public function findByToken($token);
 
@@ -93,5 +89,4 @@ interface UserDAO
 
     public function verifyToken();
     public function destroyToken();
-    public function changePassword(User $user);
 }

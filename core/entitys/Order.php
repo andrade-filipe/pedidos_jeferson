@@ -120,8 +120,5 @@ interface OrderDAO
     public function updateOrderStatus($orderId, $status);
     public function deleteOrder($orderId);
 
-    public function findById($id);
-    public function findByEmail($email);
-
     public function fetchOrders();
 }

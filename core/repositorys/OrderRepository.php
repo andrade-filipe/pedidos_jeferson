@@ -58,13 +58,6 @@ class OrderRepository implements OrderDAO
         }
     }
 
-    public function findById($id)
-    {
-    }
-    public function findByEmail($email)
-    {
-    }
-
     public function fetchOrders()
     {
         $stmt = $this->connection->prepare("SELECT * FROM orders ORDER BY id DESC");

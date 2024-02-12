@@ -13,13 +13,6 @@ class UserRepository implements UserDAO
         $this->message = new Message();
     }
 
-    public function createUser(User $user)
-    {
-    }
-    public function updateUser(User $user)
-    {
-    }
-
     public function updateUserToken($userId, $token)
     {
         try {
@@ -32,10 +25,6 @@ class UserRepository implements UserDAO
         } catch (PDOException $e) {
             throw $e;
         }
-    }
-
-    public function findById($id)
-    {
     }
 
     public function findByEmail($email)
@@ -122,9 +111,5 @@ class UserRepository implements UserDAO
         $_SESSION["token"] = "";
 
         header("Location: " . "../../index.php");
-    }
-
-    public function changePassword(User $user)
-    {
     }
 }
