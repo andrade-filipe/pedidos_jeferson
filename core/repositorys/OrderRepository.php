@@ -75,11 +75,8 @@ class OrderRepository implements OrderDAO
 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if($data){
-            $order = new Order();
-            $order -> arrayToObject($data);
-        }
+        print_r($data);
 
-        return $order;
+        return $data;
     }
 }

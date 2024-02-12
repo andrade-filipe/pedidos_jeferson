@@ -13,8 +13,7 @@ class User
         $this->setToken($token);
     }
 
-    public function arrayToUser($data)
-    {
+    public function arrayToUser($data){
         $this->setId($data["id"]);
         $this->setEmail($data["email"]);
         $this->setPassword($data["password"]);
