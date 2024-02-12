@@ -102,11 +102,4 @@ class UserRepository implements UserDAO
             }
         }
     }
-
-    public function destroyToken()
-    {
-        $_SESSION["token"] = "";
-
-        header("Location: " . "../../index.php");
-    }
 }
