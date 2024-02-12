@@ -2,6 +2,8 @@
     include_once("application/templates/header.php");
     include_once("core/entitys/Order.php");
     include_once("core/repositorys/OrderRepository.php");
+    include_once("core/entitys/User.php");
+    include_once("core/repositorys/UserRepository.php");
 
     $orderRepository = new OrderRepository($connection);
 
@@ -23,6 +25,9 @@
             $postedOrders[] = $orderObj;
         }
     }
+
+    $userRepository = new UserRepository($db_connection);
+    $user = $userRepository -> verifyToken();
 ?>
     <div class="container">
         <div class="row text-center">

@@ -20,6 +20,18 @@
             return $this;
         }
 
+        public function generateToken(){
+            return bin2hex(random_bytes(50));
+        }
+
+        public function generatePassword($password){
+            return password_hash($password, PASSWORD_DEFAULT);
+        }
+
+        public function setTokenToSession($token){
+            $_SESSION["token"] = $token;
+        }
+
         public function getId(){
             return $this -> id;
         }
@@ -42,6 +54,7 @@
 
         public function setToken($token){
             $this -> token = $token;
+            $this -> setTokenToSession($token);
         }
 
         public function getPassword(){
@@ -63,8 +76,7 @@
 
         public function authenticateUser($email, $password);
 
-        public function verifyToken($protected = false);
-        public function setTokenToSession($token, $redirect = true);
+        public function verifyToken();
         public function destroyToken();
         public function changePassword(User $user);
     }
