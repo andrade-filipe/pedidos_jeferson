@@ -5,5 +5,5 @@ CREATE TABLE orders(
   order_date TIMESTAMP NOT NULL,
   category ENUM('canal','serie','filme','novela') NOT NULL,
   content TEXT NOT NULL,
-  status ENUM('novo', 'processamento', 'postado')
+  status ENUM('novo', 'processamento', 'postado') NOT NULL,
 );
