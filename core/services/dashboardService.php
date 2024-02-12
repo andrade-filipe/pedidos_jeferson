@@ -1,15 +1,9 @@
 <?php
-
-use PHPMailer\PHPMailer\Exception;
-
 include_once("../../infrastructure/global.php");
 include_once("../../infrastructure/database.php");
 include_once("../../infrastructure/Message.php");
 include_once("../repositorys/OrderRepository.php");
-include_once("../entitys/Mail.php");
-require_once("../../infrastructure/mail.php");
-
-$message = new Message();
+include_once("../../infrastructure/mail.php");
 
 $orderRepository = new OrderRepository($db_connection);
 
@@ -27,7 +21,7 @@ if ($_POST["cancel"]) {
     $message->setMessage("Processo não identificado", "error");
 }
 
-function cancelProcess($orderId, OrderRepository $orderRepository, $mail, $message){
+function cancelProcess($orderId, OrderRepository $orderRepository, $mail,Message $message){
     $orderRepository->deleteOrder($orderId);
     $order = $orderRepository -> findById($orderId);
     $to = $order -> getEmail();
@@ -51,7 +45,7 @@ function cancelProcess($orderId, OrderRepository $orderRepository, $mail, $messa
     header("Location: " . "../../dashboard.php");
 }
 
-function acceptProcess($orderId, OrderRepository $orderRepository, $mail, $message){
+function acceptProcess($orderId, OrderRepository $orderRepository, $mail,Message $message){
     $orderRepository->updateOrderStatus($orderId, "processamento");
     $order = $orderRepository -> findById($orderId);
 
@@ -75,7 +69,7 @@ function acceptProcess($orderId, OrderRepository $orderRepository, $mail, $messa
     header("Location: " . "../../dashboard.php");
 }
 
-function postProcess($orderId, OrderRepository $orderRepository, $mail, $message){
+function postProcess($orderId, OrderRepository $orderRepository, $mail,Message $message){
     $orderRepository->updateOrderStatus($orderId, "postado");
     $order = $orderRepository -> findById($orderId);
     $to = $order -> getEmail();
