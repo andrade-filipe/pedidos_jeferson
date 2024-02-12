@@ -3,6 +3,7 @@ include_once("../../infrastructure/global.php");
 include_once("../../infrastructure/database.php");
 include_once("../../infrastructure/Message.php");
 include_once("../repositorys/OrderRepository.php");
+include_once("../entitys/Mail.php");
 
 $message = new Message();
 
@@ -26,14 +27,22 @@ function cancelProcess($orderId, OrderRepository $orderRepository)
 {
     $orderRepository->deleteOrder($orderId);
     header("Location: " . "../../dashboard.php");
-    //TODO: mandar email assincrono pro cliente avisando cancelamento
+
+    $order = $orderRepository -> findById($orderId);
+    $to = $order -> getEmail();
+    $mail = new Mail($to, "Seu Pedido Foi Cancelado", "Mensagem de Exemplo");
+    $mail -> sendMail();
 }
 
 function acceptProcess($orderId, OrderRepository $orderRepository)
 {
     $orderRepository->updateOrderStatus($orderId, "processamento");
     header("Location: " . "../../dashboard.php");
-    //TODO: mandar email assincrono pro cliente avisando processamento
+
+    $order = $orderRepository -> findById($orderId);
+    $to = $order -> getEmail();
+    $mail = new Mail($to, "Seu Pedido Foi Confirmado", "Mensagem de Exemplo");
+    $mail -> sendMail();
 }
 
 function postProcess($orderId, OrderRepository $orderRepository)
