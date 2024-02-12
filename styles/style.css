@@ -85,6 +85,7 @@ body{
     border-style: solid;
     border-radius: 1.6rem;
     border-color: #0d6efd;
+    background-color: #0d6dfd2a;
 }
 
 .processing-section {
@@ -92,7 +93,7 @@ body{
     border-style: solid;
     border-radius: 1.6rem;
     border-color: #ffc107;
-    display: block;
+    background-color: #ffc1072a;
 }
 
 .posted-section {
@@ -100,6 +101,7 @@ body{
     border-style: solid;
     border-radius: 1.6rem;
     border-color: #198754;
+    background-color: #1987542a;
 }
 
 
