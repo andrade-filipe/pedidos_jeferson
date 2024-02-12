@@ -1,0 +1,15 @@
+Sua aplicação possui três telas principais: Formulário, Login e Dashboard. O Formulário é acessível para qualquer pessoa, enquanto o Login serve como ponto de acesso ao Dashboard. O Dashboard centraliza todos os pedidos realizados. Aqui estão os detalhes para o deploy:
+
+1. Todas as consultas SQL utilizadas estão no arquivo `db_migration`, incluindo inserts para exemplos em testes, que podem ser usados para cadastrar usuários automaticamente.
+2. O banco de dados empregado é o MySQL, e as variáveis para estabelecer a conexão estão localizadas em `infrastructure/database.php`. Modifique-as conforme necessário para o seu servidor. Se optar por outro tipo de banco de dados, consulte a documentação do PDO para orientações.
+3. As configurações para envio de e-mails estão em `infrastructure/mail.php`. Você deve substituir o campo `Username` pelo seu próprio e-mail e o campo `Password` pela senha gerada pelo serviço de senhas do Google em Aplicativos de Senha do Gmail.
+4. A aplicação foi desenvolvida e testada utilizando o servidor nativo do PHP (`php -S {servidor}`). Se desejar usar outro tipo de servidor dentro da VM, procure na documentação as alterações necessárias.
+5. As mensagens de e-mail devem ser personalizadas pelo cliente, pois não foram fornecidos modelos ou textos específicos para os e-mails. Isso é possível alterando as propriedades `$mail->Subject`, `$mail->Body` e `$mail->AltBody` nas funções que enviam o e-mail, localizadas em `dashboardService`, dentro de `core/services`.
+
+Detalhes importantes:
+
+- Não existe uma tela de cadastro. Apenas usuários cadastrados no banco de dados podem fazer login, o que é recomendável para sistemas mais simples em termos de segurança.
+- Descrição do que foi feito:
+   1. Tela de Formulário: contém todos os campos necessários. Os formulários são processados pelo `formService` em `core/services`. Os dados dos formulários são armazenados no banco de dados através do `OrderRepository`.
+   2. Tela de Login Simples: É necessária autenticação para acessar o Dashboard. Caso um usuário tente acessar `/dashboard.php` sem token, ele será redirecionado para a página inicial. Os usuários devem estar previamente inseridos no banco de dados; não há tela de cadastro.
+   3. Dashboard: Atende a todos os requisitos. Permite visualizar novos pedidos, processá-los e publicá-los. O cliente receberá um e-mail nos casos de cancelamento, aprovação ou envio do pedido.
