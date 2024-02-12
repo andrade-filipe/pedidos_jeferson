@@ -16,16 +16,15 @@
         }
 
         public function sendMail(){
-            $success = mail($this -> to, $this -> subject, $this -> message, $this -> headers);
-
-            print_r($success);
-
             $message = new Message();
-            if($success){
+            try {
+                mail($this -> to, $this -> subject, $this -> message, $this -> headers);
+
                 $message -> setMessage("Email enviado com sucesso", "success");
-            } else {
+            } catch (Exception $e){
                 $message -> setMessage("Email não foi enviado", "error");
             }
+
         }
 
         public function getTo(){

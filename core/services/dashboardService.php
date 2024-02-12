@@ -23,43 +23,42 @@ if ($_POST["cancel"]) {
     $message->setMessage("Processo não identificado", "error");
 }
 
-function cancelProcess($orderId, OrderRepository $orderRepository)
-{
+function cancelProcess($orderId, OrderRepository $orderRepository){
     $orderRepository->deleteOrder($orderId);
-    header("Location: " . "../../dashboard.php");
-
     $order = $orderRepository -> findById($orderId);
     $to = $order -> getEmail();
     $mail = new Mail($to, "Seu Pedido Foi Cancelado", "Mensagem de Exemplo");
     $mail -> sendMail();
+    echo "oi";
+    header("Location: " . "../../dashboard.php");
 }
 
-function acceptProcess($orderId, OrderRepository $orderRepository)
-{
+function acceptProcess($orderId, OrderRepository $orderRepository){
     $orderRepository->updateOrderStatus($orderId, "processamento");
-    header("Location: " . "../../dashboard.php");
-
     $order = $orderRepository -> findById($orderId);
     $to = $order -> getEmail();
     $mail = new Mail($to, "Seu Pedido Foi Confirmado", "Mensagem de Exemplo");
     $mail -> sendMail();
-}
-
-function postProcess($orderId, OrderRepository $orderRepository)
-{
-    $orderRepository->updateOrderStatus($orderId, "postado");
+    echo "oi";
     header("Location: " . "../../dashboard.php");
-    //TODO: mandar email assincrono pro cliente avisando post
 }
 
-function deleteProcess($orderId, OrderRepository $orderRepository)
-{
+function postProcess($orderId, OrderRepository $orderRepository){
+    $orderRepository->updateOrderStatus($orderId, "postado");
+    $order = $orderRepository -> findById($orderId);
+    $to = $order -> getEmail();
+    $mail = new Mail($to, "Seu Pedido Foi Postado", "Mensagem de Exemplo");
+    $mail -> sendMail();
+    echo "oi";
+    header("Location: " . "../../dashboard.php");
+}
+
+function deleteProcess($orderId, OrderRepository $orderRepository){
     $orderRepository->deleteOrder($orderId);
     header("Location: " . "../../dashboard.php");
 }
 
-function backProcess($orderId, OrderRepository $orderRepository)
-{
+function backProcess($orderId, OrderRepository $orderRepository){
     $orderRepository->updateOrderStatus($orderId, "processamento");
     header("Location: " . "../../dashboard.php");
 }
