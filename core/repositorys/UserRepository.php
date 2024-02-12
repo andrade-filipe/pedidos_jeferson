@@ -88,18 +88,4 @@ class UserRepository implements UserDAO
             }
         }
     }
-
-    public function verifyToken()
-    {
-        if (!empty($_SESSION["token"])) {
-            $token = $_SESSION["token"];
-            $user = $this->findByToken($token);
-
-            if ($user) {
-                return $user;
-            } else {
-                header("Location: " . "../../login.php");
-            }
-        }
-    }
 }

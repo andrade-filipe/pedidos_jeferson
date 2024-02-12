@@ -47,6 +47,7 @@ function cancelProcess(
     }
 
     header("Location: " . "../../dashboard.php");
+    exit;
 }
 
 function acceptProcess(
@@ -72,6 +73,7 @@ function acceptProcess(
     }
 
     header("Location: " . "../../dashboard.php");
+    exit;
 }
 
 function postProcess(
@@ -97,16 +99,19 @@ function postProcess(
     }
 
     header("Location: " . "../../dashboard.php");
+    exit;
 }
 
 function deleteProcess($orderId, OrderRepository $orderRepository)
 {
     $orderRepository->deleteOrder($orderId);
     header("Location: " . "../../dashboard.php");
+    exit;
 }
 
 function backProcess($orderId, OrderRepository $orderRepository)
 {
     $orderRepository->updateOrderStatus($orderId, "processamento");
     header("Location: " . "../../dashboard.php");
+    exit;
 }

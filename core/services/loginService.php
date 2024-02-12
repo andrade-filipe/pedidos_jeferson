@@ -16,6 +16,7 @@ if ($type === "login") {
 
     if ($userRepository->authenticateUser($email, $password)) {
         header("Location: " . "../../dashboard.php");
+        exit;
     } else {
         $message->setMessage("Email ou Senha Incorretos", "error");
     }

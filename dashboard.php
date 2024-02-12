@@ -27,7 +27,16 @@
     }
 
     $userRepository = new UserRepository($db_connection);
-    $user = $userRepository -> verifyToken();
+    $user = $userRepository -> findByToken($_SESSION["token"]);
+
+    if($user){
+        if($user -> verifyToken($_SESSION["token"])){
+
+        }
+    } else {
+        header("Location: " . "../../login.php");
+        exit;
+    }
 ?>
     <div class="container">
         <form action="core/services/logout.php" class="logout d-flex justify-content-end">

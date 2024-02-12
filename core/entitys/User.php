@@ -32,6 +32,16 @@ class User
         $_SESSION["token"] = $token;
     }
 
+    public function verifyToken($token){
+        if($token === "" || empty($token)){
+            return false;
+        } else if($token === $this -> getToken()){
+            return true;
+        }
+
+        return false;
+    }
+
     public function getId()
     {
         return $this->id;
@@ -80,6 +90,4 @@ interface UserDAO
     public function findByToken($token);
 
     public function authenticateUser($email, $password);
-
-    public function verifyToken();
 }

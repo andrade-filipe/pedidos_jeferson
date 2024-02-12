@@ -1,9 +1,5 @@
 <?php
     include_once("application/templates/header.php");
-
-    // echo "<pre>";
-    // var_dump($_SERVER);
-    // echo "</pre>";
 ?>
 <div class="container form-container d-flex justify-content-center align-items-center text-center">
     <div class="row">
