@@ -3,7 +3,6 @@
     include_once("../../infrastructure/database.php");
     include_once("../../infrastructure/Message.php");
     include_once("../repositorys/OrderRepository.php");
-    include_once("../services/process.php");
 
     $message = new Message();
 
@@ -18,7 +17,7 @@
     } else if ($_POST["delete"]) {
         deleteProcess($_POST["delete"], $orderRepository);
     } else if ($_POST["back"]) {
-        backProcess($_POST["delete"], $orderRepository);
+        backProcess($_POST["back"], $orderRepository);
     } else {
         $message -> setMessage("Processo não identificado", "error");
     }
