@@ -12,7 +12,6 @@
         }
 
         public function createOrder(Order $order){
-
             try{
                 $stmt = $this -> connection -> prepare("INSERT INTO orders " .
                 "(name,email,order_date,category,content,status) " .
@@ -31,7 +30,28 @@
             }
         }
 
-        public function updateOrder(Order $order){}
+        public function updateOrderStatus($orderId, $status){
+            try {
+                $stmt = $this -> connection -> prepare("UPDATE orders SET status = :status WHERE id = :id");
+
+                $stmt -> bindParam(":id", $orderId);
+                $stmt -> bindParam(":status", $status);
+
+                $stmt -> execute();
+            } catch (PDOException $e){
+                throw $e;
+            }
+        }
+
+        public function deleteOrder($orderId){
+            try{
+                $stmt = $this -> connection -> prepare("DELETE FROM orders WHERE id = :id");
+                $stmt -> bindParam(":id", $orderId);
+                $stmt -> execute();
+            } catch (PDOException $e){
+                throw $e;
+            }
+        }
 
         public function findById($id){}
         public function findByEmail($email){}

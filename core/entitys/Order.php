@@ -98,7 +98,8 @@
 
     interface OrderDAO {
         public function createOrder(Order $order);
-        public function updateOrder(Order $order);
+        public function updateOrderStatus($orderId, $status);
+        public function deleteOrder($orderId);
 
         public function findById($id);
         public function findByEmail($email);
