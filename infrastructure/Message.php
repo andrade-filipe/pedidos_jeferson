@@ -1,6 +1,5 @@
 <?php
-class Message
-{
+class Message{
     public function setMessage($msg, $type)
     {
         $_SESSION["msg"] = $msg;
