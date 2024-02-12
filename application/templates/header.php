@@ -1,21 +1,22 @@
 <?php
-    include_once("infrastructure/global.php");
-    include_once("infrastructure/database.php");
-    include_once("infrastructure/Message.php");
+include_once("infrastructure/global.php");
+include_once("infrastructure/database.php");
+include_once("infrastructure/Message.php");
 
-    $connection = $db_connection;
+$connection = $db_connection;
 
-    $message = new Message();
+$message = new Message();
 
-    $showMessage = $message -> getMessage();
+$showMessage = $message->getMessage();
 
-    if(!empty($showMessage["msg"])){
-        $message -> clearMessage();
-    }
+if (!empty($showMessage["msg"])) {
+    $message->clearMessage();
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,8 +34,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    <?php if(!empty($showMessage["msg"])): ?>
+    <?php if (!empty($showMessage["msg"])) : ?>
         <div class="msg-container text-center container">
             <p class="msg <?= $showMessage["type"] ?>"><?= $showMessage["msg"] ?></p>
         </div>

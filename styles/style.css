@@ -1,35 +1,35 @@
-:root{
-    --ff-primary: 'Hind', sans-serif;
+:root {
+    --ff-primary: "Hind", sans-serif;
 
-    --clr-background: #E8E9EB;
+    --clr-background: #e8e9eb;
 }
 
-body{
+body {
     font-family: var(--ff-primary);
     scroll-behavior: smooth;
     background-color: var(--clr-background);
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
 /* FORMULARIO INDEX.PHP */
 
-.form-container{
+.form-container {
     height: 80vh;
 }
 
-.form-group{
+.form-group {
     margin-bottom: 1rem;
 }
 
-.checkbox-div{
+.checkbox-div {
     margin: 2rem 0;
     gap: 1rem;
 }
 
-.checkbox-label{
+.checkbox-label {
     font-weight: 700;
 }
 
@@ -38,7 +38,7 @@ body{
     margin-top: 2rem;
 }
 
-.date-control{
+.date-control {
     max-width: fit-content;
 }
 
@@ -69,17 +69,17 @@ body{
 }
 
 /*LOGIN*/
-.login-container{
+.login-container {
     height: 100vh;
 }
 
-.login-control{
+.login-control {
     max-width: fit-content;
 }
 
 /* DASHBOARD */
 
-.dashboard-section{
+.dashboard-section {
     margin: 2rem 0.25rem;
     padding: 2rem 0;
 }
@@ -108,12 +108,10 @@ body{
     background-color: #1987542a;
 }
 
-
-
 .order-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit); /* Ajuste o valor mínimo conforme necessário */
-    gap:  1rem; /* Espaçamento entre os cartões */
+    gap: 1rem; /* Espaçamento entre os cartões */
     justify-items: start; /* Alinhamento horizontal dos cartões */
     align-items: start; /* Alinhamento vertical dos cartões */
     padding: 1rem;
@@ -127,36 +125,35 @@ body{
 
 .order-card {
     background-color: #fff; /* Cor de fundo do cartão */
-    border:  1px solid #ddd; /* Borda do cartão */
-    border-radius:  1rem; /* Bordas arredondadas */
-    padding:  1rem; /* Padding interno do cartão */
+    border: 1px solid #ddd; /* Borda do cartão */
+    border-radius: 1rem; /* Bordas arredondadas */
+    padding: 1rem; /* Padding interno do cartão */
     width: 100%;
 }
 
-.order-item{
-    flex:  1; /* Each item takes equal width */
+.order-item {
+    flex: 1; /* Each item takes equal width */
 }
 
 .order-card--new {
-    box-shadow:  0  2px  4px rgba(13, 110, 253,  0.5); /* Sombra para dar profundidade */
+    box-shadow: 0 2px 4px rgba(13, 110, 253, 0.5); /* Sombra para dar profundidade */
 }
 .order-card--process {
-    box-shadow:  0  2px  4px rgba(255, 193, 7,  0.5); /* Sombra para dar profundidade */
+    box-shadow: 0 2px 4px rgba(255, 193, 7, 0.5); /* Sombra para dar profundidade */
 }
-.order-card--posted{
-    box-shadow:  0  2px  4px rgba(25, 135, 84,  0.5); /* Sombra para dar profundidade */
+.order-card--posted {
+    box-shadow: 0 2px 4px rgba(25, 135, 84, 0.5); /* Sombra para dar profundidade */
 }
-
 
 /* Estilização dos botões dentro do cartão */
 .order-buttons {
     display: flex;
     justify-content: space-between; /* Espaçamento igual entre os botões */
-    margin-top:  1rem; /* Espaçamento acima dos botões */
+    margin-top: 1rem; /* Espaçamento acima dos botões */
     gap: 1rem;
 }
 
-.order-btn{
+.order-btn {
     width: 100%;
 }
 

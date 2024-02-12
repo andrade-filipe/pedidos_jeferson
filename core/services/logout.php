@@ -1,4 +1,4 @@
 <?php
-    $_SESSION['token'] = "";
+$_SESSION['token'] = "";
 
-    header("Location: " . "../../index.php");
+header("Location: " . "../../index.php");
