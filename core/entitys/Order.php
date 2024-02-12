@@ -29,8 +29,7 @@ class Order
         return $this;
     }
 
-    public function arrayToObject($orderArr)
-    {
+    public function arrayToObject($orderArr){
         $this->setId($orderArr["id"]);
         $this->setName($orderArr["name"]);
         $this->setEmail($orderArr["email"]);

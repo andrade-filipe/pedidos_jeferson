@@ -3,26 +3,25 @@ include_once("../../infrastructure/global.php");
 include_once("../../infrastructure/database.php");
 include_once("../../infrastructure/Message.php");
 include_once("../repositorys/OrderRepository.php");
-include_once("../../infrastructure/mail.php");
+require_once("../../infrastructure/mail.php");
 
 $orderRepository = new OrderRepository($db_connection);
 
-if ($_POST["cancel"]) {
+if (!empty($_POST["cancel"])) {
     cancelProcess($_POST["cancel"], $orderRepository, $mail, $message);
-} else if ($_POST["accept"]) {
+} else if (!empty($_POST["accept"])) {
     acceptProcess($_POST["accept"], $orderRepository, $mail, $message);
-} else if ($_POST["post"]) {
+} else if (!empty($_POST["post"])) {
     postProcess($_POST["post"], $orderRepository, $mail, $message);
-} else if ($_POST["delete"]) {
+} else if (!empty($_POST["delete"])) {
     deleteProcess($_POST["delete"], $orderRepository, $message);
-} else if ($_POST["back"]) {
+} else if (!empty($_POST["back"])) {
     backProcess($_POST["back"], $orderRepository, $message);
 } else {
     $message->setMessage("Processo não identificado", "error");
 }
 
-function cancelProcess($orderId, OrderRepository $orderRepository, $mail,Message $message){
-    $orderRepository->deleteOrder($orderId);
+function cancelProcess($orderId, OrderRepository $orderRepository, $mail, Message $message){
     $order = $orderRepository -> findById($orderId);
     $to = $order -> getEmail();
 
@@ -37,18 +36,17 @@ function cancelProcess($orderId, OrderRepository $orderRepository, $mail,Message
         $mail->AltBody = 'Este é o corpo da mensagem para clientes de e-mail que não reconhecem HTML';
         // Enviar
         $mail->send();
+
+        $orderRepository->deleteOrder($orderId);
     } catch(Exception $e) {
         $message -> setMessage("Erro no envio de email", "error");
     }
 
-
-    header("Location: " . "../../dashboard.php");
+    // header("Location: " . "../../dashboard.php");
 }
 
 function acceptProcess($orderId, OrderRepository $orderRepository, $mail,Message $message){
-    $orderRepository->updateOrderStatus($orderId, "processamento");
     $order = $orderRepository -> findById($orderId);
-
     $to = $order -> getEmail();
 
     try{
@@ -62,15 +60,16 @@ function acceptProcess($orderId, OrderRepository $orderRepository, $mail,Message
         $mail->AltBody = 'Este é o corpo da mensagem para clientes de e-mail que não reconhecem HTML';
         // Enviar
         $mail->send();
+
+        $orderRepository->updateOrderStatus($orderId, "processamento");
     } catch (Exception $e){
         $message -> setMessage("Erro no envio de email", "error");
     }
 
-    header("Location: " . "../../dashboard.php");
+    // header("Location: " . "../../dashboard.php");
 }
 
 function postProcess($orderId, OrderRepository $orderRepository, $mail,Message $message){
-    $orderRepository->updateOrderStatus($orderId, "postado");
     $order = $orderRepository -> findById($orderId);
     $to = $order -> getEmail();
 
@@ -85,6 +84,8 @@ function postProcess($orderId, OrderRepository $orderRepository, $mail,Message $
         $mail->AltBody = 'Este é o corpo da mensagem para clientes de e-mail que não reconhecem HTML';
         // Enviar
         $mail->send();
+
+        $orderRepository->updateOrderStatus($orderId, "postado");
     } catch (Exception $e){
         $message -> setMessage("Erro no envio de email", "error");
     }
