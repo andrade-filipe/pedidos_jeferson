@@ -116,6 +116,7 @@ body{
 .order-info-container {
     display: flex;
     justify-content: space-between; /* Adjust as needed */
+    text-align: start;
 }
 
 .order-card {
@@ -129,8 +130,6 @@ body{
 .order-item{
     flex:  1; /* Each item takes equal width */
 }
-
-.order-item 
 
 .order-card--new {
     box-shadow:  0  2px  4px rgba(13, 110, 253,  0.5); /* Sombra para dar profundidade */
@@ -153,4 +152,10 @@ body{
 
 .order-btn{
     width: 100%;
+}
+
+/*Utils*/
+
+.bold {
+    font-weight: 700;
 }

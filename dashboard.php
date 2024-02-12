@@ -32,16 +32,16 @@
                 <div class="order-card-grid">
                 <?php foreach($newOrders as $order): ?>
                     <div class="order-card order-card--new">
-                    <div class="order-info-container">
-                            <p class="order-item">Nome: <?= $order -> getName() ?></p>
-                            <p class="order-item">Email: <?= $order -> getEmail() ?></p>
+                        <div class="order-info-container">
+                            <p class="order-item"><span class="bold">Nome: <br> </span><?= $order -> getName() ?></p>
+                            <p class="order-item"><span class="bold">Email: <br> </span>  <?= $order -> getEmail() ?></p>
                         </div>
                         <div class="order-info-container">
-                            <p class="order-item">Data: <?= $order -> getDate() ?></p>
-                            <p class="order-item">Categoria: <?= $order -> getCategory() ?></p>
+                            <p class="order-item"><span class="bold">Data: <br> </span><?= date("d/m/y", strtotime($order -> getDate())) ?></p>
+                            <p class="order-item"><span class="bold">Categoria: <br> </span><?= $order -> getCategory() ?></p>
                         </div>
                         <div class="order-info-container">
-                            <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
+                            <p class="order-item"><span class="bold">Conteúdo: <br> </span><?= $order -> getContent() ?></p>
                         </div>
                         <form action="core/services/dashboardService.php" method="POST" class="order-buttons order-info-container">
                             <button name="cancel" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-danger order-btn">
@@ -60,16 +60,16 @@
                 <div class="order-card-grid">
                 <?php foreach($processingOrders as $order): ?>
                     <div class="order-card order-card--process">
-                        <div class="order-info-container">
-                        <p class="order-item">Nome: <?= $order -> getName() ?></p>
-                            <p class="order-item">Email: <?= $order -> getEmail() ?></p>
+                    <div class="order-info-container">
+                            <p class="order-item"><span class="bold">Nome: <br> </span><?= $order -> getName() ?></p>
+                            <p class="order-item"><span class="bold">Email: <br> </span>  <?= $order -> getEmail() ?></p>
                         </div>
                         <div class="order-info-container">
-                            <p class="order-item">Data: <?= $order -> getDate() ?></p>
-                            <p class="order-item">Categoria: <?= $order -> getCategory() ?></p>
+                            <p class="order-item"><span class="bold">Data: <br> </span><?= date("d/m/y", strtotime($order -> getDate())) ?></p>
+                            <p class="order-item"><span class="bold">Categoria: <br> </span><?= $order -> getCategory() ?></p>
                         </div>
                         <div class="order-info-container">
-                            <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
+                            <p class="order-item"><span class="bold">Conteúdo: <br> </span><?= $order -> getContent() ?></p>
                         </div>
                         <form action="core/services/dashboardService.php" method="POST" class="order-buttons order-info-container">
                             <button name="cancel" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
@@ -84,16 +84,16 @@
                 <div class="order-card-grid">
                 <?php foreach($postedOrders as $order): ?>
                     <div class="order-card order-card--posted">
-                    <div class="order-info-container">
-                            <p class="order-item">Nome: <?= $order -> getName() ?></p>
-                            <p class="order-item">Email: <?= $order -> getEmail() ?></p>
+                        <div class="order-info-container">
+                            <p class="order-item"><span class="bold">Nome: <br> </span><?= $order -> getName() ?></p>
+                            <p class="order-item"><span class="bold">Email: <br> </span>  <?= $order -> getEmail() ?></p>
                         </div>
                         <div class="order-info-container">
-                            <p class="order-item">Data: <?= $order -> getDate() ?></p>
-                            <p class="order-item">Categoria: <?= $order -> getCategory() ?></p>
+                            <p class="order-item"><span class="bold">Data: <br> </span><?= date("d/m/y", strtotime($order -> getDate())) ?></p>
+                            <p class="order-item"><span class="bold">Categoria: <br> </span><?= $order -> getCategory() ?></p>
                         </div>
                         <div class="order-info-container">
-                            <p class="order-item">Conteúdo: <?= $order -> getContent() ?></p>
+                            <p class="order-item"><span class="bold">Conteúdo: <br> </span><?= $order -> getContent() ?></p>
                         </div>
                         <form action="core/services/dashboardService.php" method="POST" class="order-buttons order-info-container">
                             <button name="delete" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-danger order-btn"><i class="fa-solid fa-trash"></i></button>
