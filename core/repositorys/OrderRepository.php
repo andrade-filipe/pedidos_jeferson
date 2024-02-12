@@ -1,16 +1,13 @@
 <?php
-include_once("../entitys/Order.php");
-include_once("../../infrastructure/Message.php");
+include_once(__DIR__ . '/../entitys/Order.php');
 
 class OrderRepository implements OrderDAO
 {
     private $connection;
-    private $message;
 
     public function __construct(PDO $connection)
     {
         $this->connection = $connection;
-        $this->message = new Message();
     }
 
     public function createOrder(Order $order)

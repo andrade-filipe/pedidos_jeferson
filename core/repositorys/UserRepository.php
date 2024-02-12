@@ -1,16 +1,13 @@
 <?php
-include_once("../entitys/User.php");
-include_once("../../infrastructure/Message.php");
+include_once(__DIR__ . '/../entitys/User.php');
 
 class UserRepository implements UserDAO
 {
     private $connection;
-    private $message;
 
     public function __construct(PDO $connection)
     {
         $this->connection = $connection;
-        $this->message = new Message();
     }
 
     public function updateUserToken($userId, $token)
