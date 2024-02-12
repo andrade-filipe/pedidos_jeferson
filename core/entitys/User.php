@@ -11,6 +11,15 @@
             $this -> setToken($token);
         }
 
+        public function arrayToUser($data){
+            $this -> setId($data["id"]);
+            $this -> setEmail($data["email"]);
+            $this -> setPassword($data["password"]);
+            $this -> setToken($data["token"]);
+
+            return $this;
+        }
+
         public function getId(){
             return $this -> id;
         }

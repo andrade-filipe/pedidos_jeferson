@@ -4,3 +4,7 @@ CREATE TABLE users(
     password VARCHAR(256) NOT NULL,
     token VARCHAR(256)
 );
+
+ALTER TABLE users
+ADD CONSTRAINT email_unique UNIQUE (email);
+

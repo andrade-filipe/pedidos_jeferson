@@ -1,9 +1,13 @@
 :root{
     --ff-primary: 'Hind', sans-serif;
+
+    --clr-background: #E8E9EB;
 }
 
 body{
     font-family: var(--ff-primary);
+    scroll-behavior: smooth;
+    background-color: var(--clr-background);
 }
 
 ::-webkit-scrollbar{
