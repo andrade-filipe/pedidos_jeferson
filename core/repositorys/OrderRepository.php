@@ -67,13 +67,13 @@ class OrderRepository implements OrderDAO
     }
 
     public function findById($orderId){
-        $stmt = $this->connection->prepare("SELECT * FROM users WHERE id = :id");
+        $stmt = $this->connection->prepare("SELECT * FROM orders WHERE id = :id");
 
         $stmt->bindParam(":id", $orderId);
 
         $stmt->execute();
 
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if($data){
             $order = new Order();
