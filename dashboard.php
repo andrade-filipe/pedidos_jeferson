@@ -53,6 +53,7 @@
                             <p class="order-item"><span class="bold">Conteúdo: <br> </span><?= $order -> getContent() ?></p>
                         </div>
                         <form action="core/services/dashboardService.php" method="POST" class="order-buttons order-info-container">
+                            <input type="hidden" name="email" value="<?= $order -> getEmail()?>">
                             <button name="cancel" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-danger order-btn">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
@@ -81,6 +82,7 @@
                             <p class="order-item"><span class="bold">Conteúdo: <br> </span><?= $order -> getContent() ?></p>
                         </div>
                         <form action="core/services/dashboardService.php" method="POST" class="order-buttons order-info-container">
+                            <input type="hidden" name="email" value="<?= $order -> getEmail()?>">
                             <button name="cancel" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-danger order-btn"><i class="fa-solid fa-xmark"></i></button>
                             <button name="post" type="submit" value="<?= $order -> getId()?>" class="btn btn-outline-success order-btn"><i class="fa-solid fa-arrow-right"></i></button>
                         </form>

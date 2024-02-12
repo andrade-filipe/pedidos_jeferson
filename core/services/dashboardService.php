@@ -11,11 +11,11 @@ require_once("../../infrastructure/mail.php");
 $orderRepository = new OrderRepository($db_connection);
 
 if (!empty($_POST["cancel"])) {
-    cancelProcess($_POST["cancel"], $orderRepository, $mail, $message);
+    cancelProcess($_POST["cancel"], $_POST["email"], $orderRepository, $mail, $message);
 } else if (!empty($_POST["accept"])) {
-    acceptProcess($_POST["accept"], $orderRepository, $mail, $message);
+    acceptProcess($_POST["accept"], $_POST["email"], $orderRepository, $mail, $message);
 } else if (!empty($_POST["post"])) {
-    postProcess($_POST["post"], $orderRepository, $mail, $message);
+    postProcess($_POST["post"], $_POST["email"], $orderRepository, $mail, $message);
 } else if (!empty($_POST["delete"])) {
     deleteProcess($_POST["delete"], $orderRepository, $message);
 } else if (!empty($_POST["back"])) {
@@ -25,17 +25,14 @@ if (!empty($_POST["cancel"])) {
 }
 
 function cancelProcess(
-    $orderId,
+    $orderId, $orderEmail,
     OrderRepository $orderRepository,
     PHPMailer $mail,
-    Message $message
-) {
-    $order = $orderRepository->findById($orderId);
-
+    Message $message) {
     try {
         $mail->setFrom($mail->Username, 'Filipe Andrade');
         // Define o destinatário
-        $mail->addAddress($order["email"], 'Destinatário');
+        $mail->addAddress($orderEmail, 'Destinatário');
         // Conteúdo da mensagem
         $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
         $mail->Subject = 'Seu Pedido Foi Cancelado';
@@ -49,21 +46,18 @@ function cancelProcess(
         $message->setMessage("Erro no envio de email", "error");
     }
 
-    // header("Location: " . "../../dashboard.php");
+    header("Location: " . "../../dashboard.php");
 }
 
 function acceptProcess(
-    $orderId,
+    $orderId, $orderEmail,
     OrderRepository $orderRepository,
     PHPMailer $mail,
-    Message $message
-) {
-    $order = $orderRepository->findById($orderId);
-    
+    Message $message) {
     try {
         $mail->setFrom($mail->Username, 'Filipe Andrade');
         // Define o destinatário
-        $mail->addAddress($order["email"], 'Destinatário');
+        $mail->addAddress($orderEmail, 'Destinatário');
         // Conteúdo da mensagem
         $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
         $mail->Subject = 'Seu Pedido Foi Aprovado';
@@ -77,21 +71,18 @@ function acceptProcess(
         $message->setMessage("Erro no envio de email", "error");
     }
 
-    // header("Location: " . "../../dashboard.php");
+    header("Location: " . "../../dashboard.php");
 }
 
 function postProcess(
-    $orderId,
+    $orderId, $orderEmail,
     OrderRepository $orderRepository,
     PHPMailer $mail,
-    Message $message
-) {
-    $order = $orderRepository->findById($orderId);
-
+    Message $message) {
     try {
         $mail->setFrom($mail->Username, 'Filipe Andrade');
         // Define o destinatário
-        $mail->addAddress($order["email"], 'Destinatário');
+        $mail->addAddress($orderEmail, 'Destinatário');
         // Conteúdo da mensagem
         $mail->isHTML(true);  // Seta o formato do e-mail para aceitar conteúdo HTML
         $mail->Subject = 'Seu Pedido Foi Postado';
