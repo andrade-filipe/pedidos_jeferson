@@ -101,7 +101,7 @@
                 if($user) {
                     return $user;
                 } else {
-                    header("Location: " . "../../index.php");
+                    header("Location: " . "../../login.php");
                 }
             }
         }

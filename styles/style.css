@@ -165,3 +165,7 @@ body{
 .bold {
     font-weight: 700;
 }
+
+.logout {
+    margin-top: 1rem;
+}

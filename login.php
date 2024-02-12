@@ -1,7 +1,7 @@
 <?php
     include_once("application/templates/header.php");
 ?>
-    <div class="container ">
+<div class="container ">
     <div class="row">
         <div class="col-12 text-center login-container d-flex justify-content-center align-items-center">
             <form action="core/services/loginService.php" method="POST">

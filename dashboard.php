@@ -30,6 +30,11 @@
     $user = $userRepository -> verifyToken();
 ?>
     <div class="container">
+        <form action="core/services/logout.php" class="logout d-flex justify-content-end">
+            <button name="accept" type="submit" value="logout" class="btn btn-outline-secondary logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+        </form>
         <div class="row text-center">
             <div class="dashboard-section new-section col">
                 <h2 class="dashboard-title">Novos</h2>
