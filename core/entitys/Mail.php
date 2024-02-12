@@ -18,6 +18,8 @@
         public function sendMail(){
             $success = mail($this -> to, $this -> subject, $this -> message, $this -> headers);
 
+            print_r($success);
+
             $message = new Message();
             if($success){
                 $message -> setMessage("Email enviado com sucesso", "success");
