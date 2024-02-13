@@ -1,7 +1,7 @@
 INSERT INTO orders (name, email, order_date, category, content, status) VALUES
-('João Silva', 'joao@email.com', NOW(), 'canal', 'Contenido do canal', 'novo'),
-('Maria Oliveira', 'maria@email.com', NOW(), 'serie', 'Contenido da série', 'processamento'),
-('Carlos Costa', 'carlos@email.com', NOW(), 'filme', 'Contenido do filme', 'postado'),
-('Ana Santos', 'ana@email.com', NOW(), 'novela', 'Contenido da novela', 'novo'),
-('Pedro Fernandes', 'pedro@email.com', NOW(), 'canal', 'Outro conteúdo do canal', 'processamento'),
-('Luísa Pereira', 'luisa@email.com', NOW(), 'serie', 'Outro conteúdo da série', 'postado');
+('João Silva', 'filipeandrade.work@gmail.com', NOW(), 'canal', 'Contenido do canalasuhggggggggggggggggggggggggggggggggsuohaisoammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmlskajsajksbkashiiooooooooooooooooooooooooooooooooooooo', 'novo'),
+('Maria Oliveira', 'filipeandrade.work@gmail.com', NOW(), 'serie', 'Contenido do canalasuhggggggggggggggggggggggggggggggggsuohaisoammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmlskajsajksbkashiiooooooooooooooooooooooooooooooooooooo', 'processamento'),
+('Carlos Costa', 'filipeandrade.work@gmail.com', NOW(), 'filme', 'Contenido do canalasuhggggggggggggggggggggggggggggggggsuohaisoammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmlskajsajksbkashiiooooooooooooooooooooooooooooooooooooo', 'postado'),
+('Ana Santos', 'filipeandrade.work@gmail.com', NOW(), 'novela', 'Contenido do canalasuhggggggggggggggggggggggggggggggggsuohaisoammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmlskajsajksbkashiiooooooooooooooooooooooooooooooooooooo', 'novo'),
+('Pedro Fernandes', 'filipeandrade.work@gmail.com', NOW(), 'canal', 'Contenido do canalasuhggggggggggggggggggggggggggggggggsuohaisoammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmlskajsajksbkashiiooooooooooooooooooooooooooooooooooooo', 'processamento'),
+('Luísa Pereira', 'filipeandrade.work@gmail.com', NOW(), 'serie', 'Contenido do canalasuhggggggggggggggggggggggggggggggggsuohaisoammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmlskajsajksbkashiiooooooooooooooooooooooooooooooooooooo', 'postado');
