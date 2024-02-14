@@ -2,7 +2,7 @@
 $db_name = "jeferson";
 $db_host = "localhost";
 $db_user = "root";
-$db_pass = "Root*3306";
+$db_pass = "senha";
 
 $db_connection = new PDO("mysql:dbname=$db_name;host=$db_host", $db_user, $db_pass);
 
